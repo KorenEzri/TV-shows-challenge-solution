@@ -105,7 +105,7 @@ function OneShow() {
           <div className="rating">
             Rating:&nbsp;
             <span className={ratingClass}>
-              {show.rating.toString().slice(0, 3)}
+              {show?.rating?.toString().slice(0, 3)}
             </span>
           </div>
           <div className="show-status">

@@ -12,15 +12,15 @@ function Home() {
     try {
       const {
         data: {
-          data: { readAllTvShows },
+          data: { readAllSingleTvShows },
         },
       } = await axios({
         url: "http://localhost:8001/graphql",
         method: "POST",
         data: {
           query: `
-        query readAllTvShows {
-          readAllTvShows{
+        query readAllSingleTvShows {
+          readAllSingleTvShows{
             name
             showId
             image_thumbnail_path
@@ -29,12 +29,12 @@ function Home() {
           `,
         },
       });
-      setShows(readAllTvShows);
+      setShows(readAllSingleTvShows);
     } catch ({ message }) {
       setError(message);
     }
 
-    // readAllTvShows.forEach(async (show) => {
+    // readAllSingleTvShows.forEach(async (show) => {
     //   const {
     //     data: { tvShow },
     //   } = await axios.get(
